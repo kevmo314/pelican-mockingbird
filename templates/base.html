@@ -17,8 +17,12 @@
 
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/screen.css" type="text/css" />
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css" type="text/css" />
-
-
+		{% if article and article.latex %}
+			{{ article.latex }}
+		{% endif %}
+		{% if page and page.latex %}
+			{{ page.latex }}
+		{% endif %}
     </head>
     <body>
         {% if SITENAME -%}
@@ -52,10 +56,7 @@
 
                 <div class="clear"></div>
                 <div id="footer">
-                    <p>
                     Mockingbird theme by <a href="http://nevanscott.com/">Nevan Scott</a>
-                    &middot;
-                    <a class="atom" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Feed</a>
                 </div>
             </div>
             <div class="clear"></div>
